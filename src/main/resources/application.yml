@@ -15,4 +15,3 @@ spring:
     enabled: true
     change-log: classpath:db/master.xml
     drop-first: true
-

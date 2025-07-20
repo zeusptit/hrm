@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="1" author="cuongtp">
+        <insert tableName="companies">
+            <column name="name" value="Tech Innovations Inc."/>
+            <column name="address" value="123 Tech Lane, Silicon Valley, CA"/>
+            <column name="phone_number" value="+1-800-555-0199"/>
+            <column name="email" value="cuongtp@gmail.com"/>
+            <column name="website" value="https://www.techinnovations.com"/>
+            <column name="tax_id" value="TIN123456789"/>
+            <column name="registration_number" value="REG123456789"/>
+            <column name="description" value="Leading provider of innovative technology solutions."/>
+            <column name="created_at" valueDate="2023-10-01T10:00:00Z"/>
+            <column name="updated_at" valueDate="2023-10-01T10:00:00Z"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

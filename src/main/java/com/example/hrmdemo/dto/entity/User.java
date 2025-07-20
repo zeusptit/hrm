@@ -20,9 +20,10 @@ import java.util.List;
 @Table(name = "user_accounts")
 @Getter
 @Setter
-public class UserAccount extends BaseEntity {
+public class User extends BaseEntity {
     private String username;
-    private String passwordHash;
+    private String email;
+    private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))

@@ -26,11 +26,4 @@ public class Company extends BaseEntity {
     private List<Facility> facilities;
 }
 
-// remote and local
-// remote: github, gitlab, bitbucket
-// local: your own server, local machine
-// fetch: remote <=> local
-// git branch
-// git checkout -b <branch_name> // in dev -> checkout -b feature/new-feature -> code in new feature like dev
-// git add . // add all changes(stage changes)
-// git commit -m "message" // commit changes
+

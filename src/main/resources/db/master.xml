@@ -7,7 +7,7 @@
 
     <include file="/db/changelog/create-company.xml"/>
     <include file="/db/changelog/create-facility.xml"/>
-
+    <include file="/db/changelog/insert-company.xml"/>
 <!--    <include file="db.changelog-department.xml"/>-->
 <!--    <include file="db.changelog-employee.xml"/>-->
 <!--    <include file="db.changelog-contract.xml"/>-->

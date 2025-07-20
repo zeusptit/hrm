@@ -49,5 +49,5 @@ public class Employee extends BaseEntity{
     private List<PerformanceReview> performanceReviews;
 
     @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
-    private UserAccount userAccount;
+    private User user;
 }
