@@ -2,7 +2,8 @@ package com.example.hrmdemo.controller;
 
 import com.example.hrmdemo.dto.request.*;
 import com.example.hrmdemo.dto.response.CommonResponse;
-import com.example.hrmdemo.sevice.impl.AuthService;
+import com.example.hrmdemo.dto.response.UserResponse;
+import com.example.hrmdemo.sevice.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -19,17 +20,17 @@ public class AuthController {
 
     private final AuthService authService;
 
-    @GetMapping("/search")
-    public ResponseEntity<CommonResponse<Page<FamilyResponse>>> searchFamilies(
-            @RequestParam(required = false) String name,
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size
-            // select ... limit page offset page * size
-    ) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<FamilyResponse> result = familyService.searchFamiliesByName(name, pageable);
-        return ResponseEntity.ok(new CommonResponse<>(200, "Search with paging success", result));
-    }
+//    @GetMapping("/search")
+//    public ResponseEntity<CommonResponse<Page<FamilyResponse>>> searchFamilies(
+//            @RequestParam(required = false) String name,
+//            @RequestParam(defaultValue = "0") int page,
+//            @RequestParam(defaultValue = "10") int size
+//            // select ... limit page offset page * size
+//    ) {
+//        Pageable pageable = PageRequest.of(page, size);
+//        Page<FamilyResponse> result = familyService.searchFamiliesByName(name, pageable);
+//        return ResponseEntity.ok(new CommonResponse<>(200, "Search with paging success", result));
+//    }
 
     @PostMapping("/login")
     public ResponseEntity<CommonResponse<String>> login(@RequestBody AuthRequest authRequest) {

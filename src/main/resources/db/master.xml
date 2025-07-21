@@ -5,14 +5,14 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
 
-    <include file="/db/changelog/create-company.xml"/>
-    <include file="/db/changelog/create-facility.xml"/>
-    <include file="/db/changelog/insert-company.xml"/>
-<!--    <include file="db.changelog-department.xml"/>-->
-<!--    <include file="db.changelog-employee.xml"/>-->
-<!--    <include file="db.changelog-contract.xml"/>-->
-<!--    <include file="db.changelog-attendance.xml"/>-->
-<!--    <include file="db.changelog-salary.xml"/>-->
-<!--    <include file="db.changelog-performance_review.xml"/>-->
-<!--    <include file="db.changelog-user_account.xml"/>-->
+    <include file="db/changelog/create-company.xml"/>
+    <include file="db/changelog/create-facility.xml"/>
+    <include file="db/changelog/insert-company.xml"/>
+    <!--    <include file="db.changelog-department.xml"/>-->
+    <!--    <include file="db.changelog-employee.xml"/>-->
+    <!--    <include file="db.changelog-contract.xml"/>-->
+    <!--    <include file="db.changelog-attendance.xml"/>-->
+    <!--    <include file="db.changelog-salary.xml"/>-->
+    <!--    <include file="db.changelog-performance_review.xml"/>-->
+    <!--    <include file="db.changelog-user_account.xml"/>-->
 </databaseChangeLog>

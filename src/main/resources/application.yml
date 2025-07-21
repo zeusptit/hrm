@@ -14,4 +14,8 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:db/master.xml
-    drop-first: true
+    drop-first: false
+
+app:
+  jwt-secret: "8d00c1da9078aa59b425b1a26b87f9d3c5e575658614857ed7d2c162b63c215f"
+  jwt-expiration: 86400000

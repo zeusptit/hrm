@@ -1,5 +1,6 @@
 package com.example.hrmdemo.security.custom;
 
+import com.example.hrmdemo.dto.entity.Employee;
 import com.example.hrmdemo.dto.entity.User;
 import com.example.hrmdemo.dto.enums.Role;
 import com.example.hrmdemo.repository.UserRepository;

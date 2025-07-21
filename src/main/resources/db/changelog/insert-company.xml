@@ -15,8 +15,8 @@
             <column name="tax_id" value="TIN123456789"/>
             <column name="registration_number" value="REG123456789"/>
             <column name="description" value="Leading provider of innovative technology solutions."/>
-            <column name="created_at" valueDate="2023-10-01T10:00:00Z"/>
-            <column name="updated_at" valueDate="2023-10-01T10:00:00Z"/>
+            <column name="created_at" valueDate="2023-10-01 10:00:00"/>
+            <column name="updated_at" valueDate="2023-10-01 10:00:00"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

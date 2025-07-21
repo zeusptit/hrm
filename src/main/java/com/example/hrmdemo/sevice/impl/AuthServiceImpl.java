@@ -1,8 +1,17 @@
 package com.example.hrmdemo.sevice.impl;
 
 import com.example.hrmdemo.dto.entity.User;
+import com.example.hrmdemo.dto.enums.Role;
+import com.example.hrmdemo.dto.request.AuthRequest;
+import com.example.hrmdemo.dto.request.ChangePasswordRequest;
+import com.example.hrmdemo.dto.request.ForgotPasswordRequest;
+import com.example.hrmdemo.dto.request.RegisterRequest;
+import com.example.hrmdemo.dto.request.ResetPasswordRequest;
+import com.example.hrmdemo.dto.response.UserResponse;
+import com.example.hrmdemo.security.custom.CustomUserDetails;
 import com.example.hrmdemo.security.custom.CustomUserDetailsService;
 import com.example.hrmdemo.security.jwt.JwtTokenProvider;
+import com.example.hrmdemo.sevice.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,12 +29,13 @@ import java.util.Random;
 
 @Component
 @RequiredArgsConstructor
-public class AuthServiceImpl implements com.example.hrmdemo.sevice.impl.AuthService {
+public class AuthServiceImpl implements AuthService {
 
     private final JwtTokenProvider jwtTokenProvider;
     private final AuthenticationManager authenticationManager;
     private final CustomUserDetailsService userService;
     private final PasswordEncoder passwordEncoder;
+
     @Override
     public String login(AuthRequest authRequest) {
         Authentication authentication = authenticationManager.authenticate(
@@ -46,7 +56,7 @@ public class AuthServiceImpl implements com.example.hrmdemo.sevice.impl.AuthServ
         newUser.setUsername(registerRequest.getUsername());
         newUser.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
         newUser.setEmail(registerRequest.getEmail());
-        newUser.setRoles(List.of(Role.USER));
+        newUser.setRoles(List.of(Role.EMPLOYEE));
 
         userService.saveUser(newUser);
 
@@ -61,13 +71,13 @@ public class AuthServiceImpl implements com.example.hrmdemo.sevice.impl.AuthServ
 
         String otp = generateOTP();
 
-        try {
-            String subject = "OTP for Password Reset";
-            String body = "<p>Your OTP for resetting your password is: <b>" + otp + "</b></p>";
-            emailService.sendEmail(request.getEmail(), subject, body);
-        } catch (MessagingException e) {
-            throw new RuntimeException("Error while sending email: " + e.getMessage());
-        }
+//        try {
+//            String subject = "OTP for Password Reset";
+//            String body = "<p>Your OTP for resetting your password is: <b>" + otp + "</b></p>";
+//            emailService.sendEmail(request.getEmail(), subject, body);
+//        } catch (MessagingException e) {
+//            throw new RuntimeException("Error while sending email: " + e.getMessage());
+//        }
 
         return otp;
     }

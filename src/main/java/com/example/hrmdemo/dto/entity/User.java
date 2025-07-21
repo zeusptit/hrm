@@ -22,16 +22,14 @@ import java.util.List;
 @Setter
 public class User extends BaseEntity {
     private String username;
-    private String email;
     private String password;
+    private String email;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Column(name = "role_name")
     @Enumerated(EnumType.STRING)
     private List<Role> roles;
-
-    private boolean isActive;
 
     @OneToOne
     @JoinColumn(name = "employee_id")
